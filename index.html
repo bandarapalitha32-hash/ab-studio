@@ -1,0 +1,546 @@
+﻿<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ab Studio - Graphic Design Experts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ab Studio - Graphic Design Experts</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>    
+    
+</head>
+<body>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="login-modal">
+            <span class="close-modal" id="closeModal">&times;</span>
+            
+            <div id="loginSection">
+                <h2>Ab Studio Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label>දුරකථන අංකය (Phone Number)</label>
+                        <input type="text" id="loginPhone" placeholder="07XXXXXXXX" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Login with OTP</button>
+                </form>
+                <p style="text-align: center; margin-top: 15px; font-size: 0.8rem;">ගිණුමක් නොමැතිද? <a href="javascript:void(0)" id="showSignup" style="color: var(--primary-color);">Sign Up</a></p>
+            </div>
+
+            <div id="signupSection" style="display: none;">
+                <h2>Create Account</h2>
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label>සම්පූර්ණ නම (Full Name)</label>
+                        <input type="text" id="userName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>දුරකථන අංකය (Phone Number)</label>
+                        <input type="text" id="userPhone" placeholder="07XXXXXXXX" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Register & Get OTP</button>
+                </form>
+                <p style="text-align: center; margin-top: 15px; font-size: 0.8rem;">දැනටමත් ගිණුමක් තිබේද? <a href="javascript:void(0)" id="showLogin" style="color: var(--primary-color);">Login</a></p>
+            </div>
+
+            <div id="otpSection" style="display: none;">
+                <h2>Verify OTP</h2>
+                <p id="otpMsg" style="font-size: 0.8rem; text-align: center; margin-bottom: 10px;"></p>
+                <form id="otpForm">
+                    <div class="form-group">
+                        <label>OTP කේතය ඇතුළත් කරන්න</label>
+                        <input type="text" id="otpInput" maxlength="6" placeholder="XXXXXX" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Verify & Continue</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo">
+            <a href="javascript:void(0)" onclick="showHomePage()">
+                <img src="images/ab-studio-logo.png" alt="Ab Studio Logo">
+            </a>
+
+        </div>
+<div class="lang-switcher">
+    <button onclick="changeLanguage('si')" id="btn-si" class="active">SI</button>
+    <button onclick="changeLanguage('en')" id="id-en">EN</button>
+</div>
+        <nav>
+            <ul>
+                <li><a href="javascript:void(0)" onclick="showHomePage()">Home</a></li>
+                <li><a href="javascript:void(0)" onclick="showServicesPage()">Services</a></li>
+                <li><a href="javascript:void(0)" onclick="showPortfolioPage()">Portfolio</a></li>
+                <li><a href="javascript:void(0)" onclick="showReviews()">Reviews</a></li>
+                <li><a href="javascript:void(0)" onclick="showTracking()">Design Tracking</a></li>
+                <li><a href="javascript:void(0)" onclick="showContactPage()">Contact</a></li>
+                <li><a href="javascript:void(0)" onclick="showAboutPage()">About Us</a></li>
+            </ul>
+        </nav>
+        <button class="login-btn" id="loginBtn">Login Now</button>
+    </header>
+
+    <main>
+        <section class="hero" id="homeHero">
+            <div class="hero-content">
+                <h4>Abhiman Gihan Bandara Presents</h4>
+                <h1>Master <span>Graphic Design</span> - Elevate Your Brand</h1>
+                <p style="font-size: 0.9rem; color: #b2bec3; margin-bottom: 5px;">AB STUDIO - CREATIVE DESIGN AGENCY / EST. 2024</p>
+                <p>ලංකාවේ අංක 1 නිර්මාණශීලී ග්‍රැෆික් නිර්මාණ ආයතනය. ඔබගේ ව්‍යාපාරයට අවශ්‍ය සියලුම නිර්මාණ උසස් ප්‍රමිතියෙන් යුතුව නිමවා ගැනීමට අප හා එක්වන්න.</p>
+                
+                <a href="tel:0766885161" class="contact-float">
+                    <i class="fa fa-phone"></i> Call Us - 0766885161
+                </a>
+            </div>
+
+            <div class="hero-images">
+                <div class="slide-box box-large">
+                    <img src="images/image2.webp" alt="Slide 1">
+                    <img src="D:\web 1\image2.png" alt="Slide 2">
+                    <img src="D:\web 1\image3.jpg" alt="Slide 3">
+                </div>
+                <div class="slide-box">
+                    <img src="D:\web 1\image2.png" alt="Slide 4">
+                    <img src="D:\web 1\image3.jpg" alt="Slide 5">
+                    <img src="D:\web 1\imae1.png" alt="Slide 6">
+                </div>
+                <div class="slide-box">
+                    <img src="D:\web 1\image3.jpg" alt="Slide 7">
+                    <img src="D:\web 1\imae1.png" alt="Slide 8">
+                    <img src="D:\web 1\image2.png" alt="Slide 9">
+                </div>
+            </div>
+        </section>
+     
+        <section class="services" id="homeServices">
+            <div class="section-title">
+                <h2 style="font-size: 2.5rem;">Our Popular Services</h2>
+            </div>
+            <div class="service-grid">
+                <div class="card" onclick="showPortfolio('Logo & Branding')">
+                    <img src="https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?auto=format&fit=crop&w=500" alt="Logo">
+                    <div class="card-body">
+                        <h3>Logo & Branding</h3>
+                        <p>ඔබේ ව්‍යාපාරයට අනන්‍ය වූ වෘත්තීය මට්ටමේ ලෝගෝ නිර්මාණ.</p>
+                        <span class="price">LKR 2500 Up</span>
+                    </div>
+                </div>
+                <div class="card" onclick="showPortfolio('Social Media Posts')">
+                    <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=500" alt="Social Media">
+                    <div class="card-body">
+                        <h3>Social Media Posts</h3>
+                        <p>Facebook/Instagram සඳහා ආකර්ෂණීය පෝස්ට් නිර්මාණ.</p>
+                        <span class="price">LKR 1000 Up</span>
+                    </div>
+                </div>
+                <div class="card" onclick="showPortfolio('Flyers & Brochures')">
+                    <img src="D:\web 1\hq720.jpg" alt="Flyers">
+                    <div class="card-body">
+                        <h3>Flyers & Brochures</h3>
+                        <p>මුද්‍රණ කටයුතු සඳහා අවශ්‍ය සියලුම නිර්මාණ.</p>
+                        <span class="price">LKR 1500 Up</span>
+                    </div>
+                </div>
+                <div class="card" onclick="showPortfolio('Cover Pages')">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=500" alt="Cover Page">
+                    <div class="card-body">
+                        <h3>Cover Pages</h3>
+                        <p>ඔබේ ටියුශන් ක්ලාස් එකේ ටුයුට් එක සදහා ලස්සන නිමාවක් .</p>
+                        <span class="price">LKR 1000 Up</span>
+                    </div>
+                </div>
+                <div class="card" onclick="showPortfolio('Web Design')">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500" alt="Web Design">
+                    <div class="card-body">
+                        <h3>Web Design</h3>
+                        <p>ඔබේ ව්‍යාපාරය සඳහා නවීන සහ ආකර්ෂණීය වෙබ් අඩවි නිර්මාණ.</p>
+                        <span class="price">LKR 15,000 Up</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fullServicesPage" style="display: none; padding: 60px 8%;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 30px; gap: 20px;">
+                <button onclick="showOrderForm()" class="submit-btn" style="width: auto; padding: 12px 25px;">
+                    <i class="fa fa-plus"></i> New Design
+                </button>
+
+                <div class="search-container" style="position: relative; flex: 1; max-width: 400px; margin-left: auto;">
+                    <input type="text" id="serviceSearch" onkeyup="searchServices()" placeholder="ඔබට අවශ්‍ය සේවාව මෙහි සොයන්න..." 
+                        style="width: 100%; padding: 12px 40px 12px 15px; border-radius: 30px; border: 2px solid #ddd; outline: none;">
+                    <i class="fa fa-search" style="position: absolute; right: 15px; top: 15px; color: #aaa;"></i>
+                </div>
+            </div>
+
+            <div class="service-grid" id="mainServiceGrid">
+                <div class="card service-item">
+                    <img src="https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?auto=format&fit=crop&w=500">
+                    <div class="card-body">
+                        <h3>Logo & Branding</h3>
+                        <p>ඔබේ ව්‍යාපාරයට අනන්‍ය වූ වෘත්තීය මට්ටමේ ලෝගෝ නිර්මාණ.</p>
+                        <span class="price">LKR 2500 Up</span>
+                        <button class="btn-new-design" onclick="openOrderForm('Logo & Branding', 2500)">+ New Design</button>
+                    </div>
+                </div>
+                <div class="card service-item">
+                    <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=500">
+                    <div class="card-body">
+                        <h3>Social Media Posts</h3>
+                        <p>Facebook/Instagram සඳහා ආකර්ෂණීය පෝස්ට් නිර්මාණ.</p>
+                        <span class="price">LKR 1000 Up</span>
+                    </div>
+                </div>
+                <div class="card service-item">
+                    <img src="https://images.unsplash.com/photo-1586717791821-3f44a563dc4c?auto=format&fit=crop&w=500">
+                    <div class="card-body">
+                        <h3>Flyers & Brochures</h3>
+                        <p>මුද්‍රණ කටයුතු සඳහා අවශ්‍ය සියලුම නිර්මාණ.</p>
+                        <span class="price">LKR 1500 Up</span>
+                    </div>
+                </div>
+                <div class="card service-item">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=500">
+                    <div class="card-body">
+                        <h3>Cover Pages</h3>
+                        <p>ඔබේ ටියුශන් ක්ලාස් එකේ ටියුට් එක සඳහා ලස්සන නිමාවක්.</p>
+                        <span class="price">LKR 1000 Up</span>
+                    </div>
+                </div>
+                <div class="card service-item">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500">
+                    <div class="card-body">
+                        <h3>Web Design</h3>
+                        <p>ඔබේ ව්‍යාපාරය සඳහා නවීන සහ ආකර්ෂණීය වෙබ් අඩවි නිර්මාණ.</p>
+                        <span class="price">LKR 15,000 Up</span>
+                    </div>
+                </div>
+                <div class="card service-item">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=500">
+                    <div class="card-body">
+                        <h3>Business Cards</h3>
+                        <p>වෘත්තීය මට්ටමේ ව්‍යාපාරික කාඩ්පත් නිර්මාණ.</p>
+                        <span class="price">LKR 800 Up</span>
+                    </div>
+                </div>
+                <div class="card service-item">
+                    <img src="https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=500">
+                    <div class="card-body">
+                        <h3>Motion Graphics</h3>
+                        <p>ආකර්ෂණීය වීඩියෝ සහ ඇනිමේෂන් නිර්මාණ.</p>
+                        <span class="price">LKR 5000 Up</span>
+                    </div>
+                </div>
+                <div class="card service-item">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=500">
+                    <div class="card-body">
+                        <h3>UI/UX Design</h3>
+                        <p>ජංගම දුරකථන මෘදුකාංග සඳහා අතුරුමුහුණත් නිර්මාණය.</p>
+                        <span class="price">LKR 10,000 Up</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolioDetail" style="display: none; padding: 60px 8%; text-align: center;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                <button onclick="backToHome()" style="padding: 10px 20px; cursor: pointer; border-radius: 8px; border: none; background: #eee;">
+                    <i class="fa fa-arrow-left"></i> Back
+                </button>
+                <h2 id="detailTitle" style="font-size: 2rem;">Service Name</h2>
+                <button onclick="showOrderForm()" style="padding: 10px 25px; background: var(--primary-color); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
+                    + New Design
+                </button>
+            </div>
+            <div id="portfolioGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+            </div>
+        </section>
+
+        <section id="orderFormSection" style="display: none; padding: 60px 8%; background: #fff; max-width: 700px; margin: 20px auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <h2 style="text-align: center; margin-bottom: 30px;">Order Your New Design</h2>
+            
+            <form id="designOrderForm" onsubmit="processOrder(event)" style="text-align: left;">
+                <div class="form-group">
+                    <label>සම්පූර්ණ නම</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label>දුරකථන අංකය</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label>Email ලිපිනය</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label>අවශ්‍ය ප්‍රමාණය (Size)</label>
+                    <input type="text" id="designSize" placeholder="උදා: A4, 1080x1080px">
+                </div>
+                <div class="form-group">
+                    <label>ඩිසයින් එකට අදාළ විස්තර/Images අබ්ලෝඩ් කරන්න</label>
+                    <input type="file" id="uploadFile" style="padding: 10px;">
+                </div>
+                <div class="form-group">
+                    <label for="coverDetails">Add Cover Details (ඔබගේ Design එකට ඇතුලත් විය යුතු විස්තර මෙහි ඇතුලත් කරන්න.) <span class="optional">(optional)</span></label>
+                    <textarea id="coverDetails" name="coverDetails" rows="4" placeholder="උදා: අකුරු වල වර්ණ, විශේෂ ලෝගෝ ඇතුළත් කිරීම් ආදිය..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="printMood">Print Moods <span class="optional">(optional)</span></label>
+                    <select id="printMood" name="printMood">
+                        <option value="" disabled selected>තෝරන්න (Select Mood)</option>
+                        <option value="offset">OFFSET COLOR</option>
+                        <option value="digital">DIGITAL PRINT</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>ලබා ගැනීමට අවශ්‍ය ආකාරය (Format)</label>
+                    <select id="fileFormat">
+                        <option value="PNG">PNG</option>
+                        <option value="PDF">PDF</option>
+                        <option value="PSD (Source File)">PSD (Source File)</option>
+                        <option value="JPG">JPG</option>
+                        <option value="web">web</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>ඩිසයින් එක එවිය යුත්තේ කුමක් හරහාද?</label>
+                    <select id="deliveryMethod">
+                        <option value="WhatsApp">WhatsApp</option>
+                        <option value="Telegram">Telegram</option>
+                        <option value="Email">Email</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="submit-btn" style="font-size: 1.1rem;">Continue to Payment</button>
+                <p onclick="backToPortfolio()" style="text-align: center; margin-top: 15px; color: #666; cursor: pointer;">Back to Portfolio</p>
+            </form>
+        </section>
+
+        <section id="aboutSection" class="about-section" style="display: none;">
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800" alt="AB Studio Team">
+                    <div style="position: absolute; bottom: -20px; right: -20px; background: #00cec9; color: white; padding: 20px; border-radius: 20px; font-weight: bold;">
+                        5+ Years Experience
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Creative Mindset</h3>
+                    <h2>The Story Behind <br>AB Studio</h2>
+                    <p>අපි AB Studio හරහා ඔබේ ව්‍යාපාරික සිහින සැබෑ කරන වෘත්තීය මට්ටමේ ග්‍රැෆික් නිර්මාණ සේවාවක් ලබා දෙන්නෙමු. සරල ලෝගෝ නිර්මාණයේ සිට සංකීර්ණ වෙබ් අඩවි නිර්මාණය දක්වා වූ පුළුල් පරාසයක සේවාවන් අප සතුය. අපගේ අරමුණ වන්නේ සෑම නිර්මාණයක්ම කලාවක් මෙන්ම පාරිභෝගිකයාගේ ව්‍යාපාරයට සැබෑ වටිනාකමක් එකතු කරන මෙවලමක් බවට පත් කිරීමයි.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h3>500+</h3>
+                            <small>Projects Done</small>
+                        </div>
+                        <div class="stat-item">
+                            <h3>300+</h3>
+                            <small>Happy Clients</small>
+                        </div>
+                        <div class="stat-item">
+                            <h3>100%</h3>
+                            <small>Creativity</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolioSection" class="portfolio-section" style="display: none;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-size: 2.8rem; color: #2d3436;">Our Masterpieces</h2>
+                <p style="color: #636e72;">අප විසින් නිම කරන ලද විශිෂ්ටතම නිර්මාණ එකතුව.</p>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterPortfolio('all')">All Designs</button>
+                <button class="filter-btn" onclick="filterPortfolio('logos')">Logos</button>
+                <button class="filter-btn" onclick="filterPortfolio('social')">Social Media</button>
+                <button class="filter-btn" onclick="filterPortfolio('print')">Print Materials</button>
+            </div>
+            <div class="portfolio-grid" id="mainPortfolioGrid">
+                <div class="portfolio-item logos">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500" alt="Logo Design">
+                    <div class="portfolio-overlay">
+                        <h3>Modern Logo</h3>
+                        <p>Branding Project</p>
+                    </div>
+                </div>
+                <div class="portfolio-item social">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=500" alt="Social Media">
+                    <div class="portfolio-overlay">
+                        <h3>Instagram Post</h3>
+                        <p>Digital Marketing</p>
+                    </div>
+                </div>
+                <div class="portfolio-item print">
+                    <img src="https://images.unsplash.com/photo-1586717791821-3f44a563dc4c?w=500" alt="Flyer">
+                    <div class="portfolio-overlay">
+                        <h3>Business Flyer</h3>
+                        <p>Print Design</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contactSection" class="contact-section" style="display: none;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-size: 2.8rem; color: #2d3436;">Get In Touch</h2>
+                <p style="color: #636e72;">ඕනෑම නිර්මාණයක් පිළිබඳ විමසීමට අප හා සම්බන්ධ වන්න.</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info-panel">
+                    <div>
+                        <h3>Contact Information</h3>
+                        <p style="opacity: 0.8; margin-bottom: 40px;">පහත ඕනෑම ක්‍රමයකින් අපව සම්බන්ධ කරගත හැක.</p>
+                        <div class="info-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div><small>Call Us</small><p>+94 76 688 5161</p></div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div><small>WhatsApp</small><p>+94 70 402 5586</p></div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div><small>Email</small><p>hello@abstudio.lk</p></div>
+                        </div>
+                    </div>
+                    <div class="social-links" style="display: flex; gap: 15px;">
+                        <i class="fab fa-facebook" style="font-size: 1.5rem; cursor: pointer;"></i>
+                        <i class="fab fa-instagram" style="font-size: 1.5rem; cursor: pointer;"></i>
+                        <i class="fab fa-behance" style="font-size: 1.5rem; cursor: pointer;"></i>
+                    </div>
+                </div>
+                <div class="contact-form-panel">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" placeholder="ඔබේ නම ඇතුළත් කරන්න" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email / Phone</label>
+                            <input type="text" placeholder="ඔබව සම්බන්ධ කරගත හැකි අංකය හෝ ඊමේල්" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea rows="5" placeholder="ඔබට අවශ්‍ය දේ මෙහි ලියන්න..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" style="border-radius: 12px; font-weight: bold;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="trackingSection" class="tracking-section" style="display: none;">
+            <div class="tracking-card">
+                <i class="fas fa-map-marker-alt" style="font-size: 3rem; color: #6c5ce7; margin-bottom: 20px;"></i>
+                <h2 style="font-size: 2.2rem; color: #2d3436;">Track Your Design</h2>
+                <p style="color: #636e72;">ඔබේ ඇණවුම් අංකය (Order ID) ඇතුළත් කර ප්‍රගතිය පරීක්ෂා කරන්න.</p>
+                <div class="search-box-tracking">
+                    <input type="text" id="orderIDInput" placeholder="උදා: AB-1001">
+                    <button onclick="trackOrder()" class="submit-btn" style="width: auto; padding: 0 30px;">Track</button>
+                </div>
+                <div id="trackingResult" class="progress-container">
+                    <div class="progress-fill" id="progressBar" style="width: 0%;"></div>
+                    <div class="step" id="step1">
+                        <div class="step-circle"><i class="fas fa-receipt"></i></div><small>Ordered</small>
+                    </div>
+                    <div class="step" id="step2">
+                        <div class="step-circle"><i class="fas fa-pen-nib"></i></div><small>Designing</small>
+                    </div>
+                    <div class="step" id="step3">
+                        <div class="step-circle"><i class="fas fa-check-double"></i></div><small>Review</small>
+                    </div>
+                    <div class="step" id="step4">
+                        <div class="step-circle"><i class="fas fa-download"></i></div><small>Delivery</small>
+                    </div>
+                </div>
+                <p id="trackMessage" style="margin-top: 30px; font-weight: 500; color: #6c5ce7;"></p>
+            </div>
+        </section>
+
+        <section id="reviewsSection" class="reviews-section" style="display: none;">
+            <div style="margin-bottom: 40px;">
+                <h2 style="font-size: 2.8rem; color: #2d3436;">Customer Reviews</h2>
+                <div style="width: 80px; height: 4px; background: #6c5ce7; margin: 15px auto; border-radius: 2px;"></div>
+                <p style="color: #636e72;">අපගේ වෘත්තීය සේවාව පිළිබඳ පාරිභෝගික අදහස් කිහිපයක්</p>
+            </div>
+            <div class="review-container">
+                <button class="nav-btn prev-btn" onclick="prevReview()"><i class="fas fa-chevron-left"></i></button>
+                <button class="nav-btn next-btn" onclick="nextReview()"><i class="fas fa-chevron-right"></i></button>
+                <div class="review-wrapper" id="reviewSlider">
+                    <div class="review-card">
+                        <div class="review-content">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p style="font-size: 1.1rem; color: #4b4b4b; line-height: 1.8;">"ඉතාමත් කෙටි කාලයකදී මා හට අවශ්‍ය වූ ලෝගෝ එක ඉතාමත් නිර්මාණශීලී ලෙස නිමවා දුන්නා. ස්තූතියි AB Studio!"</p>
+                            <span class="reviewer-name">Kamal Perera</span>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-content">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p style="font-size: 1.1rem; color: #4b4b4b; line-height: 1.8;">"මගේ Social Media Posts ටික ලස්සනට කරලා දුන්නා. ව්‍යාපාරයට ලොකු ආකර්ෂණයක් ලැබුණා. පිරිසිදු වැඩක්!"</p>
+                            <span class="reviewer-name">Nimali Silva</span>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-content">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                            <p style="font-size: 1.1rem; color: #4b4b4b; line-height: 1.8;">"හොඳම සේවාවක් ලබා දෙන ආයතනයක්. මගේ වෙබ් අඩවියේ නිර්මාණ කටයුතු සියල්ලම ඉතා සාර්ථකයි."</p>
+                            <span class="reviewer-name">Sahan Jayasinghe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <img src="images/ab-studio-logo.png" alt="Ab Studio" height="60">
+                <p style="margin-top:15px">Abhiman Gihan Bandara<br>Founder of Ab Studio</p>
+            </div>
+            <div>
+                <h4>Useful Links</h4>
+                <p style="cursor: pointer;" onclick="showServicesPage()">Services</p>
+                <p style="cursor: pointer;" onclick="showPortfolioPage()">Portfolio</p>
+            </div>
+            <div>
+                <h4>Support</h4>
+                <p style="cursor: pointer;" onclick="showContactPage()">Contact</p>
+                <p>Privacy Policy</p>
+            </div>
+            <div>
+                <h4>Contact Info</h4>
+                <p>Phone: 0766885161</p>
+                <p>WhatsApp: 0704025586</p>
+            </div>
+        </div>
+        <hr style="margin-top: 20px;">
+        <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #636e72;">
+            Copyright © 2026 Ab Studio. All Rights Reserved.
+        </p>
+    </footer>
+
+    <a href="https://wa.me/94704025586" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i> Click to join with us!
+    </a>
+
+<script src="script.js"></script>
+</body>
+</body>
+</html>
