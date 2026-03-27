@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AB Studio - Admin Dashboard</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; margin: 0; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        h1 { color: #6c5ce7; text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #6c5ce7; color: white; }
+        tr:hover { background-color: #f1f1f1; }
+        .section-title { font-size: 1.5rem; color: #2d3436; margin-top: 40px; border-bottom: 3px solid #6c5ce7; display: inline-block; padding-bottom: 5px;}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>AB Studio Admin Panel (???????? ??)</h1>
+
+    <div class="section-title">?? ????????? ?????? (Orders)</div>
+    <table id="ordersTable">
+        <thead>
+            <tr>
+                <th>????</th>
+                <th>??</th>
+                <th>?????</th>
+                <th>???</th>
+                <th>Tracking ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tbody>
+    </table>
+
+    <div class="section-title">?? ???? ?? ?? (Logins)</div>
+    <table id="loginsTable">
+        <thead>
+            <tr>
+                <th>???? ?? ?????</th>
+                <th>?????? ????</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tbody>
+    </table>
+</div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyA99VlZTYa8SV6j_PY5t_qhrvjaDjTM8Ak",
+      authDomain: "ab-studio-a3ff9.firebaseapp.com",
+      databaseURL: "https://ab-studio-a3ff9-default-rtdb.firebaseio.com",
+      projectId: "ab-studio-a3ff9"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    // ?? ?????? ??? ???????? ????? ??? ??
+    const ordersRef = ref(db, 'orders');
+    onValue(ordersRef, (snapshot) => {
+        const tableBody = document.querySelector('#ordersTable tbody');
+        tableBody.innerHTML = ""; // ??? ???? ???? ?????
+        
+        snapshot.forEach((childSnapshot) => {
+            const data = childSnapshot.val();
+            const row = `<tr>
+                <td>${data.date || 'N/A'}</td>
+                <td>${data.customerName}</td>
+                <td>${data.service}</td>
+                <td>Rs. ${data.price}</td>
+                <td>${data.trackingID}</td>
+            </tr>`;
+            tableBody.innerHTML += row;
+        });
+    });
+
+    // ?? ???? ??? ?? ??? ??
+    const loginsRef = ref(db, 'logins');
+    onValue(loginsRef, (snapshot) => {
+        const tableBody = document.querySelector('#loginsTable tbody');
+        tableBody.innerHTML = "";
+        
+        snapshot.forEach((childSnapshot) => {
+            const data = childSnapshot.val();
+            const row = `<tr>
+                <td>${data.loginTime}</td>
+                <td>${data.phoneNumber}</td>
+            </tr>`;
+            tableBody.innerHTML += row;
+        });
+    });
+</script>
+
+</body>
+</html>
